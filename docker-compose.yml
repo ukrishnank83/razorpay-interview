@@ -1,9 +1,11 @@
+#Database container
 rzp-mysql:
      image: mysql:5.6
      environment:
        MYSQL_ROOT_PASSWORD: rzp@123
        MYSQL_DATABASE: razorpay
 
+#Application  Container
 razor_pay:
      links:
       - "rzp-mysql:db"
@@ -17,3 +19,4 @@ razor_pay:
        MYSQL_USER: root
        MYSQL_PASS: rzp@123
        MYSQL_PORT: 3306
+       PORT: 8080
