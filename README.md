@@ -20,7 +20,7 @@ You can also use supervisorctl or setup docker-compose as a service in init.d.
 # Endpoints
 
 health_check endpoint:- /health
-ping edpoint:- /ping
+ping endpoint:- /ping
 
 Logs should be giving 200 response for the above endpoint, confirming the healthy setup.
 
