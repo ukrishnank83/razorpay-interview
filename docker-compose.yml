@@ -1,0 +1,19 @@
+rzp-mysql:
+     image: mysql:5.6
+     environment:
+       MYSQL_ROOT_PASSWORD: rzp@123
+       MYSQL_DATABASE: razorpay
+
+razor_pay:
+     links:
+      - "rzp-mysql:db"
+     image: razorpay/devops:latest
+     entrypoint: /rzp-interview
+
+     ports:
+       - "8080:8080"
+     environment:
+       MYSQL_HOST: db
+       MYSQL_USER: root
+       MYSQL_PASS: rzp@123
+       MYSQL_PORT: 3306
