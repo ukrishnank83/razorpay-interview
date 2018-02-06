@@ -24,6 +24,9 @@ ping edpoint:- /ping
 
 Logs should be giving 200 response for the above endpoint, confirming the healthy setup.
 
+
+# Application Requirements
+
 Razorpay service works on the basis of environment variables
 
        MYSQL_HOST: <IP or location of mysql>
@@ -35,8 +38,8 @@ Razorpay service works on the basis of environment variables
        
 PS:- if you change the port environment variable please change port forwarding info in the docker-compose file to reflect the change.
 
-Also the database name used by the application is razorpay
-
+Also the database name  in MYSQL used by the application is razorpay
+If database is not proper or unreachable the /health endpoint will fail even though the ping endpoint works.
 
 
 
