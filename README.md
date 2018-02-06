@@ -1,4 +1,4 @@
-# razorpay-interview
+# Razorpay-interview
 
 
 For this application to work please install docker compose and docker for an ubuntu machine using the below link
@@ -22,9 +22,20 @@ You can also use supervisorctl or setup docker-compose as a service in init.d.
 health_check endpoint:- /health
 ping edpoint:- /ping
 
-Error Messages:-
+Logs should be giving 200 response for the above endpoint, confirming the healthy setup.
 
+Razorpay service works on the basis of environment variables
 
+       MYSQL_HOST: <IP or location of mysql>
+       MYSQL_USER: <mysql_username>
+       MYSQL_PASS: <mysql_password>
+       MYSQL_PORT: <port in whicn mysql is running>
+       PORT: <port for the application to run>
+       GIN_MODE: release <type of release(PROD or staging)>
+       
+PS:- if you change the port environment variable please change port forwarding info in the docker-compose file to reflect the change.
+
+Also the database name used by the application is razorpay
 
 
 
